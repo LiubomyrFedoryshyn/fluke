@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/fluke/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/fluke/static/js/main.9d18edb8.chunk.js",
+    "main.js.map": "/fluke/static/js/main.9d18edb8.chunk.js.map",
+    "runtime-main.js": "/fluke/static/js/runtime-main.9a32df20.js",
+    "runtime-main.js.map": "/fluke/static/js/runtime-main.9a32df20.js.map",
+    "static/css/2.ecdd39c8.chunk.css": "/fluke/static/css/2.ecdd39c8.chunk.css",
+    "static/js/2.0e9f06dc.chunk.js": "/fluke/static/js/2.0e9f06dc.chunk.js",
+    "static/js/2.0e9f06dc.chunk.js.map": "/fluke/static/js/2.0e9f06dc.chunk.js.map",
+    "index.html": "/fluke/index.html",
+    "static/css/2.ecdd39c8.chunk.css.map": "/fluke/static/css/2.ecdd39c8.chunk.css.map",
+    "static/css/main.6dea0f05.chunk.css.map": "/fluke/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.0e9f06dc.chunk.js.LICENSE.txt": "/fluke/static/js/2.0e9f06dc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9a32df20.js",
+    "static/css/2.ecdd39c8.chunk.css",
+    "static/js/2.0e9f06dc.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.9d18edb8.chunk.js"
+  ]
+}
