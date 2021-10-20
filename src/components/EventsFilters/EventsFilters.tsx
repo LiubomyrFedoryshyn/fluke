@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import Select from "react-select";
-import { SFilters } from "./styles";
+import { SFilters, SItem } from "./styles";
 import "react-datepicker/dist/react-datepicker.css";
 import { DEFAULT_CATEGORY, STATUS_OPTIONS } from "../../utils/constants";
 import { fetchCategories } from "../../services/api/rest/methods";
@@ -62,35 +62,47 @@ const EventsFilters: FC<IFilters> = ({
 
     return (
         <SFilters>
-            <div
-                className={order === "desc" ? "desc" : "asc"}
-                onClick={setOrder}
-            >
-                &#8593;
-            </div>
-            <DatePicker
-                maxDate={new Date()}
-                selected={startDate}
-                onChange={(date: any) => setDate(date)}
-            />
-            <Select
-                className="custom"
-                classNamePrefix="select"
-                defaultValue={STATUS_OPTIONS[0]}
-                isSearchable
-                name="color"
-                options={STATUS_OPTIONS}
-                onChange={getStatus}
-            />
-            <Select
-                className="custom"
-                classNamePrefix="select"
-                defaultValue={categoriesOptions[0]}
-                isSearchable
-                name="color"
-                options={categoriesOptions}
-                onChange={getCategory}
-            />
+            <SItem>
+                <p>Order:</p>
+                <div
+                    className={`order ${order === "desc" ? "desc" : "asc"}`}
+                    onClick={setOrder}
+                >
+                    <p>&#8593;</p>
+                </div>
+            </SItem>
+            <SItem>
+                <p>Prior date:</p>
+                <DatePicker
+                    maxDate={new Date()}
+                    selected={startDate}
+                    onChange={(date: any) => setDate(date)}
+                />
+            </SItem>
+            <SItem>
+                <p>Status:</p>
+                <Select
+                    className="custom-select"
+                    classNamePrefix="select"
+                    defaultValue={STATUS_OPTIONS[0]}
+                    isSearchable
+                    name="color"
+                    options={STATUS_OPTIONS}
+                    onChange={getStatus}
+                />
+            </SItem>
+            <SItem>
+                <p>Category:</p>
+                <Select
+                    className="custom-select"
+                    classNamePrefix="select"
+                    defaultValue={categoriesOptions[0]}
+                    isSearchable
+                    name="color"
+                    options={categoriesOptions}
+                    onChange={getCategory}
+                />
+            </SItem>
         </SFilters>
     );
 };

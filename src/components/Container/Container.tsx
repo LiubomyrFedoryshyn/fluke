@@ -1,12 +1,16 @@
 import React, { FC } from "react";
-import { SContainer } from "./styles";
+import { SContainer, SContainerContent } from "./styles";
 
 interface IContainer {
     children: any;
 }
 
 const Container: FC<IContainer> = ({ children }) => {
-    return <SContainer>{children}</SContainer>;
+    return (
+        <SContainer>
+            <SContainerContent>{children}</SContainerContent>
+        </SContainer>
+    );
 };
 
 export default Container;

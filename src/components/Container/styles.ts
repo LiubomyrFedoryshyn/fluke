@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
 const SContainer = styled.div({
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "column",
-    alignContent: "center",
-    alignItems: "center",
+    margin: "0 auto",
     "@media only screen and (min-width: 1382px)": {
         maxWidth: 1255,
         padding: "0 15px",
@@ -25,4 +21,12 @@ const SContainer = styled.div({
     },
 });
 
-export { SContainer };
+const SContainerContent = styled.div({
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignContent: "center",
+    alignItems: "center",
+});
+
+export { SContainer, SContainerContent };
