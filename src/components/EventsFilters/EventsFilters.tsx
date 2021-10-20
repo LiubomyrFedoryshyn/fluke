@@ -34,7 +34,6 @@ const EventsFilters: FC<IFilters> = ({
     const getCategories = async () => {
         try {
             const res: any = await fetchCategories();
-            console.log(res?.data.categories);
             setCategoriesOptions([
                 ...categoriesOptions,
                 ...res?.data.categories.map((el: Category) => {

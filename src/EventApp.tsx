@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from "./components/Container";
 import EventsFilters from "./components/EventsFilters";
 import EventsTable from "./components/EventsTable";
+import Loader from "./components/Loader";
 import { AdditionalInfo } from "./services/api/rest/interfaces";
 
 import { fetchEvents } from "./services/api/rest/methods";
@@ -20,6 +21,7 @@ const EventApp = () => {
         DEFAULT_CATEGORY.value
     );
     const [order, setOrder] = useState("asc");
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         getEvents();
@@ -27,8 +29,10 @@ const EventApp = () => {
 
     const getEvents = async () => {
         try {
+            setLoading(true);
             const res: any = await fetchEvents(daysCount, status, category);
             setTableInfo(res?.data);
+            setLoading(false);
         } catch (err) {
             console.log("err", err);
         }
@@ -45,15 +49,18 @@ const EventApp = () => {
 
     return (
         <Container>
-            <EventsFilters
-                order={order}
-                setOrder={changeOrder}
-                setCategory={setCategory}
-                setStatus={setStatus}
-                setDaysCount={setDaysCount}
-            />
+            <Loader loading={loading} />
+            <>
+                <EventsFilters
+                    order={order}
+                    setOrder={changeOrder}
+                    setCategory={setCategory}
+                    setStatus={setStatus}
+                    setDaysCount={setDaysCount}
+                />
 
-            <EventsTable tableInfo={tableInfo} events={tableInfo.events} />
+                <EventsTable tableInfo={tableInfo} events={tableInfo.events} />
+            </>
         </Container>
     );
 };
