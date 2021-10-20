@@ -50,6 +50,12 @@ const SFilters = styled.div({
             },
         },
     },
+    "@media only screen and (max-width: 991px)": {
+        justifyContent: "center",
+    },
+    "@media only screen and (max-width: 768px)": {
+        flexDirection: "column",
+    },
 });
 
 const SItem = styled.div({
@@ -58,6 +64,12 @@ const SItem = styled.div({
         color: darkGrayColor,
         margin: 0,
         marginBottom: 5,
+    },
+    "@media only screen and (max-width: 768px)": {
+        marginBottom: 15,
+        "&:last-of-type": {
+            marginBottom: 0,
+        },
     },
 });
 

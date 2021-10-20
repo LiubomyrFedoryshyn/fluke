@@ -10,6 +10,7 @@ interface ITable {
 
 const EventsTable: FC<ITable> = ({ events, tableInfo }) => {
     const [eventModalOpened, setEventModalOpened] = useState<boolean>(false);
+    const [eventDetails, setEventDetails] = useState<IEvents | null>(null);
 
     return (
         <STable>
@@ -27,7 +28,10 @@ const EventsTable: FC<ITable> = ({ events, tableInfo }) => {
                         {events.map((el) => {
                             return (
                                 <tr
-                                    onClick={() => setEventModalOpened(true)}
+                                    onClick={() => {
+                                        setEventModalOpened(true);
+                                        setEventDetails(el);
+                                    }}
                                     className={el.closed ? "closed" : "opened"}
                                     key={el.id}
                                 >
@@ -41,7 +45,11 @@ const EventsTable: FC<ITable> = ({ events, tableInfo }) => {
             ) : (
                 <h1>No events found</h1>
             )}
-            {eventModalOpened && <EventModal />}
+            <EventModal
+                eventDetails={eventDetails}
+                setEventModalOpened={setEventModalOpened}
+                eventModalOpened={eventModalOpened}
+            />
         </STable>
     );
 };

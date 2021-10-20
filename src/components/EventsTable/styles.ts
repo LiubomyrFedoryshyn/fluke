@@ -13,6 +13,7 @@ const STable = styled.div({
         textAlign: "center",
     },
     table: {
+        width: 750,
         border: `1px solid ${darkGrayColor}`,
         "th, td": {
             padding: "5px 15px",
@@ -38,6 +39,11 @@ const STable = styled.div({
                     opacity: 0.5,
                 },
             },
+        },
+    },
+    "@media only screen and (max-width: 768px)": {
+        table: {
+            width: "100%",
         },
     },
 });
