@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/fluke/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/fluke/static/js/main.ae40462c.chunk.js",
-    "main.js.map": "/fluke/static/js/main.ae40462c.chunk.js.map",
+    "main.js": "/fluke/static/js/main.8232ea36.chunk.js",
+    "main.js.map": "/fluke/static/js/main.8232ea36.chunk.js.map",
     "runtime-main.js": "/fluke/static/js/runtime-main.9a32df20.js",
     "runtime-main.js.map": "/fluke/static/js/runtime-main.9a32df20.js.map",
     "static/css/2.ecdd39c8.chunk.css": "/fluke/static/css/2.ecdd39c8.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.ecdd39c8.chunk.css",
     "static/js/2.084eab63.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.ae40462c.chunk.js"
+    "static/js/main.8232ea36.chunk.js"
   ]
 }
