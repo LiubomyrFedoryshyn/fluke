@@ -15,25 +15,21 @@ const httpRequest = async <T,>({
     headers = {},
     data,
 }: IBody<T>) => {
-    try {
-        const authHeaders: any = {
-            ...headers,
-        };
+    const authHeaders: any = {
+        ...headers,
+    };
 
-        const response = await axios({
-            url,
-            method,
-            params,
-            headers: {
-                ...authHeaders,
-            },
-            data,
-        });
+    const response = await axios({
+        url,
+        method,
+        params,
+        headers: {
+            ...authHeaders,
+        },
+        data,
+    });
 
-        return response;
-    } catch (e: any) {
-        console.log(e);
-    }
+    return response;
 };
 
 export default httpRequest;
